@@ -5,7 +5,6 @@ host = 'localhost'
 port = 8080
 
 server = TCPServer.new(host, port)
-date_time = DateTime.now
 
 STDERR.puts "WebServer SansKriti 1.0\r\n" +
      "Author: Rabin Gaire\r\n" +
@@ -15,7 +14,8 @@ STDERR.puts "WebServer SansKriti 1.0\r\n" +
 loop do
   socket = server.accept
   request = socket.gets
-
+  date_time = DateTime.now
+  
   begin
     response = "Hello World!\n" +
                "Date/Time: #{date_time.strftime('%d/%m/%Y %H:%M')}"
